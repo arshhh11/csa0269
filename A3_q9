@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr1[MAX_SIZE], arr2[MAX_SIZE];
+    int *ptr1 = arr1;
+    int *ptr2 = arr2;
+    int i, size;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    printf("Enter %d elements in the array: ", size);
+    for (i = 0; i < size; i++)
+    {
+        scanf("%d", ptr1);
+        ptr1++;
+    }
+
+   
+    ptr1 = arr1;
+
+    // Copying the elements from arr1 to arr2 using pointers
+    for (i = 0; i < size; i++)
+    {
+        *ptr2 = *ptr1;
+        ptr1++;
+        ptr2++;
+    }
+
+   
+    ptr2 = arr2;
+
+    printf("\nElements of arr1: ");
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", *ptr1);
+        ptr1++;
+    }
+
+    printf("\nElements of arr2: ");
+    for (i = 0; i < size; i++)
+    {
+        printf("%d ", *ptr2);
+        ptr2++;
+    }
+
+    return 0;
+}
